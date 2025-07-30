@@ -8,7 +8,7 @@ let rangoMax = prompt('Ingresa el rango maximo con el que deseas jugar ');
 numeroSecreto = Math.floor(Math.random()*rangoMax)+1;
 console.log(numeroSecreto)
 while (numeroSecreto != numeroUsuario) {
-     numeroUsuario = prompt("Me indicas un número entre 1 y 10 por favor:");
+     numeroUsuario = prompt(`Me indicas un número entre 1 y ${rangoMax} por favor:`);
 
      console.log(numeroUsuario);
      /*
