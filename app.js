@@ -1,7 +1,8 @@
 //Variables
-let numeroSecreto = 2;
+let numeroSecreto = Math.floor(Math.random()*10)+1;
 let numeroUsuario;
 let intentos = 1;
+let maxIntentos = 3;
 while (numeroSecreto != numeroUsuario) {
      numeroUsuario = prompt("Me indicas un número entre 1 y 10 por favor:");
 
@@ -12,7 +13,7 @@ while (numeroSecreto != numeroUsuario) {
      */
      if (numeroUsuario == numeroSecreto) {
           //Acertamos, fue verdadera la condición
-          alert(`Acertaste, el número es: ${numeroUsuario}. Lo hiciste en ${intentos} intento(s)`);
+          alert(`Acertaste, el número es: ${numeroUsuario}. Lo hiciste en ${intentos} ${intentos == 1 ? 'intento' : 'intentos'}`);
      } else {
           //La condición no se cumplió
           if (numeroUsuario > numeroSecreto) {
@@ -21,6 +22,10 @@ while (numeroSecreto != numeroUsuario) {
                alert('El número secreto es mayor');
           }
           intentos++;
+          if (intentos>maxIntentos){
+               alert('Llegaste al número máximo de intentos');
+               break;
+          }
 
      }
 }
